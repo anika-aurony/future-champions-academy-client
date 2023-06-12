@@ -24,9 +24,9 @@ const Header = () => {
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[purple] rounded-box w-52">
                             <Link to="/"><li><a>Home</a></li></Link>
                             <Link to="/allToys"><li><a>Classes</a></li></Link>
-                            {/* {user && <Link to="/myToy"><li><a>My Toys</a></li></Link>} */}
+                            {user && <Link to="/myToy"><li><a>Dashboard</a></li></Link>}
 
-                            {/* {user && <Link to="/addAToy"><li><a>Add a Toy</a></li></Link>} */}
+                            
                             
 
                         </ul>
@@ -41,9 +41,9 @@ const Header = () => {
                         <Link to="/"><li><a>Home</a></li></Link>
                         <Link to="/allToys"><li><a>Classes</a></li></Link>
                         <Link to="/allToys"><li><a>Instuctors</a></li></Link>
-                        {/* {user && <Link to="/myToy"><li><a>My Toys</a></li></Link>} */}
+                        {user && <Link to="/myToy"><li><a>Dashboard</a></li></Link>}
 
-                        {/* {user && <Link to="/addAToy"><li><a>Add a Toy</a></li></Link>} */}
+                       
                         
 
 
