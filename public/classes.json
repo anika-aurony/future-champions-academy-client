@@ -1,0 +1,93 @@
+[
+    {
+      "_id": "1",
+      "image": "https://images.pexels.com/photos/3800517/pexels-photo-3800517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "name": "Cricket",
+      "instructor": "Amy Johnson",
+      "availableSeats": 8,
+      "price": 35,
+      "totalStudents": 15
+    },
+    {
+      "_id": "2",
+      "image": "https://images.pexels.com/photos/2116469/pexels-photo-2116469.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "name": "Basketball",
+      "instructor": "Mark Davis",
+      "availableSeats": 10,
+      "price": 40,
+      "totalStudents": 20
+    },
+    {
+      "_id": "3",
+      "image": "https://images.pexels.com/photos/3148452/pexels-photo-3148452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "name": "Football",
+      "instructor": "Sara Thompson",
+      "availableSeats": 5,
+      "price": 30,
+      "totalStudents": 12
+    },
+    {
+      "_id": "4",
+      "image": "https://media.istockphoto.com/id/186569077/photo/handball-player-in-red-shooting-toward-a-net.jpg?s=1024x1024&w=is&k=20&c=uwAVRhduPVRLjOZMvElhyGqFa3ldOo3aTcNgO8J0W4k=",
+      "name": "Handball",
+      "instructor": "David Wilson",
+      "availableSeats": 12,
+      "price": 25,
+      "totalStudents": 18
+    },
+    {
+      "_id": "5",
+      "image": "https://images.pexels.com/photos/6115007/pexels-photo-6115007.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "name": "Chess",
+      "instructor": "Michelle Lee",
+      "availableSeats": 15,
+      "price": 45,
+      "totalStudents": 25
+    },
+    {
+      "_id": "6",
+      "image": "https://images.pexels.com/photos/14527385/pexels-photo-14527385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "name": "Table Tennis",
+      "instructor": "Ryan Anderson",
+      "availableSeats": 10,
+      "price": 50,
+      "totalStudents": 30
+    },
+    {
+      "_id": "7",
+      "image": "https://images.pexels.com/photos/2017868/pexels-photo-2017868.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "name": "Billiards",
+      "instructor": "Emily Roberts",
+      "availableSeats": 6,
+      "price": 35,
+      "totalStudents": 10
+    },
+    {
+      "_id": "8",
+      "image": "https://images.pexels.com/photos/1325654/pexels-photo-1325654.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "name": "Golf",
+      "instructor": "Adam Brown",
+      "availableSeats": 8,
+      "price": 40,
+      "totalStudents": 15
+    },
+    {
+      "_id": "9",
+      "image": "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "name": "Soccer",
+      "instructor": "Sophia Martinez",
+      "availableSeats": 12,
+      "price": 30,
+      "totalStudents": 22
+    },
+    {
+      "_id": "10",
+      "image": "https://play-lh.googleusercontent.com/xFGWrUuOt0QWnO3srQBtUBM_pc138T2fRYgYUxnaUPhqbs8MhLw2ZK8lIZykwMUucg",
+      "name": "Caram",
+      "instructor": "Daniel Thompson",
+      "availableSeats": 7,
+      "price": 35,
+      "totalStudents": 17
+    }
+  ]
+  

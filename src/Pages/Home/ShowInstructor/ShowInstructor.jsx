@@ -1,11 +1,11 @@
-import React from 'react';
+
 
 const ShowInstructor = (props) => {
     console.log(props.instruct)
     const {name, image, email} = props.instruct; 
     return (
         <div>
-            <div className="card w-80 bg-blue-100 shadow-xl mb-4" >
+            <div className="card w-80 bg-blue-100 shadow-xl mb-12" >
                 <figure className="px-10 pt-10">
                     <img src={image} alt="Shoes" className="rounded-xl h-[150px]" />
                 </figure>
