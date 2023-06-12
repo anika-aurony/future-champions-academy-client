@@ -1,8 +1,18 @@
 
 import { Link } from 'react-router-dom';
 import badge from '../../assets/badge.png'
+import { useContext } from 'react';
+import { AuthContext } from '../providers/AuthProviders';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
+
     return (
         <div>
             <div className="navbar bg-[#0ea5e9] text-white">
@@ -40,16 +50,16 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {/* {user && <p className='text-white pt-2 me-3 ' data-toggle="tooltip" data-placement="right" title={user?.displayName}> <img src={user?.photoURL
-                    } alt="" style={{ height: '40px', borderRadius: '50%', width: '40px' }} /> </p>} */}
+                    {user && <p className='text-white pt-2 me-3 ' data-toggle="tooltip" data-placement="right" title={user?.displayName}> <img src={user?.photoURL
+                    } alt="" style={{ height: '40px', borderRadius: '50%', width: '40px' }} /> </p>}
 
 
 
-                    {/* {
+                    {
                         user ? <button className="btn bg-[purple] me-10" onClick={handleLogOut}>Log out</button>
                             :
                             <Link to="/login"><a className="btn bg-[purple] me-10" >Login</a></Link>
-                    } */}
+                    }
 
                 </div>
             </div>
