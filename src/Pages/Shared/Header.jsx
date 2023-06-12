@@ -56,9 +56,9 @@ const Header = () => {
 
 
                     {
-                        user ? <button className="btn bg-[purple] me-10" onClick={handleLogOut}>Log out</button>
+                        user ? <button className="btn bg-[#297EA6] me-10" onClick={handleLogOut}>Log out</button>
                             :
-                            <Link to="/login"><a className="btn bg-[purple] me-10" >Login</a></Link>
+                            <Link to="/login"><a className="btn bg-[#297EA6] me-10" >Login</a></Link>
                     }
 
                 </div>
