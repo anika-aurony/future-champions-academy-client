@@ -1,18 +1,31 @@
-import bg1 from "../../../assets/bg1.png"
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import './Login.css'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 
 const Login = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const [error, setError] = useState();
 
     const { signIn, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
+
+    const onSubmit = data => {
+        console.log(data);
+        signIn(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate(from, { replace: true })
+            })
+            .catch(error =>{ console.log(error.message)
+                    setError(error.message)
+            });
+        reset();
+    }
 
     const handleGoogleSignin = () =>{
         signInWithGoogle()

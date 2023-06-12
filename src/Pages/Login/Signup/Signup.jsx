@@ -1,11 +1,16 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../providers/AuthProviders';
+import { updateProfile } from 'firebase/auth';
 
 const Signup = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser } = useContext(AuthContext)
+    const [error, setError] = useState('')
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
 
     const onSubmit = data =>{
         console.log(data);
@@ -13,11 +18,25 @@ const Signup = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-                // updateUserData(result.user, name, photo);
+                updateUserData(result.user, data.name, data.photo);
+                navigate(from, { replace: true })
             })
             .catch(error => console.log(error))
         reset();
     } 
+
+    const updateUserData = (user, name, photo) => {
+        updateProfile(user, {
+            displayName: name,
+            photoURL: photo
+        })
+            .then(() => {
+                console.log('username and photo updated')
+            })
+            .catch(() => {
+                setError(error.message)
+            })
+    }
 
     return (
         <div>
