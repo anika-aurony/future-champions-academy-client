@@ -14,7 +14,7 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/'
 
     const onSubmit = data => {
-        console.log(data);
+        // console.log(data);
         signIn(data.email, data.password)
             .then(result => {
                 const user = result.user;
@@ -71,6 +71,7 @@ const Login = () => {
                             {/* <p className='text-[red]'>{error}</p> */}
                             <hr />
                             <p className='my-2'>New to Future Champions Academy? <span className='text-[purple]'><Link to="/signup">Create Account</Link></span> </p>
+                            <p>{error}</p>
                             <div className="divider">OR</div>
                             <div className="form-control  mb-3">
                                 <button className="btn bg-[#297EA6]" onClick={handleGoogleSignin}>
