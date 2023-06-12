@@ -1,4 +1,4 @@
-import React from 'react';
+
 import page404 from "../../assets/page404.jpg"
 import { Link } from 'react-router-dom';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const AboutUs = () => {
     return (
@@ -27,7 +27,7 @@ const AboutUs = () => {
 
                     <div className="stat">
                         <div className="stat-figure text-secondary">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyqMQAGjupIPY9CHdHzPK-9eBVZ9MuKQhLbQ&usqp=CAU" alt="" srcset="" className='w-12' />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyqMQAGjupIPY9CHdHzPK-9eBVZ9MuKQhLbQ&usqp=CAU" alt=""  className='w-12' />
                         </div>
                         <div className="stat-value">86%</div>
                         <div className="stat-title">Academic Success</div>

@@ -1,18 +1,18 @@
-import  { useEffect, useState } from 'react';
-import ShowInstructor from '../ShowInstructor/ShowInstructor';
+import   { useEffect, useState } from 'react';
+import ShowInstructor from '../../Home/ShowInstructor/ShowInstructor';
 
-const Instructor = () => {
+const AllInstructors = () => {
     const [instructors, setInstructor] = useState([]);
     console.log(instructors)
 
     useEffect(() => {
         fetch('instructor.json')
             .then(res => res.json())
-            .then(data => setInstructor(data.slice(0, 6)))
+            .then(data => setInstructor(data))
     }, [])
     return (
         <div>
-            <h1 className='text-2xl text-center p-10'>Our Popular Instructor</h1>
+            <h1 className='text-2xl text-center p-10'>Our All Instructor</h1>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 mx-8'>
                 {
                     instructors.map(intruct => <ShowInstructor key={intruct._id}
@@ -21,8 +21,9 @@ const Instructor = () => {
                     )
                 }
             </div>
+            
         </div>
     );
 };
 
-export default Instructor;
+export default AllInstructors;
