@@ -4,6 +4,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 const Dashboard = () => {
 
     const isAdmin = true;
+    const isInstructor = false;
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -18,22 +19,30 @@ const Dashboard = () => {
                     {/* Sidebar content here */}
                     {
                         isAdmin ? <>
-                            <li><NavLink to="/dashboard/instructorhome"> Admin Home</NavLink></li>
+
+                            
+                            <li><NavLink to="/dashboard/manageClass">  Manage Classes</NavLink></li>
+                            <li><NavLink to="/dashboard/manageUsers"> Manage Users </NavLink></li>
+
+
+                        </> : isInstructor ? <>
+                            <li><NavLink to="/dashboard/instructorhome"> Instructor Home</NavLink></li>
                             <li><NavLink to="/dashboard/addClass">  Add a class</NavLink></li>
                             <li><NavLink to="/dashboard/myclasses"> My Classes</NavLink></li>
-                            
 
-                        </> : <>
-                            <li><NavLink to="/dashboard/userhome"> User Home</NavLink></li>
-                            <li><NavLink to="/"> Reservations</NavLink></li>
-                            <li><NavLink to="/"> Payment History</NavLink></li>
-                            <li>
-                                <NavLink to="/dashboard/mycart"> My Cart
+                        </> :
 
-                                </NavLink>
+                            <>
+                                <li><NavLink to="/dashboard/userhome"> User Home</NavLink></li>
+                                <li><NavLink to="/"> Reservations</NavLink></li>
+                                <li><NavLink to="/"> Payment History</NavLink></li>
+                                <li>
+                                    <NavLink to="/dashboard/mycart"> My Cart
 
-                            </li>
-                        </>
+                                    </NavLink>
+
+                                </li>
+                            </>
                     }
                     <div className="divider"></div>
                     <li><NavLink to="/">Back to Home</NavLink> </li>
@@ -43,7 +52,7 @@ const Dashboard = () => {
 
             </div>
         </div>
-        
+
     );
 };
 

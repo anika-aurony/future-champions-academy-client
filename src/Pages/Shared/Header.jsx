@@ -14,6 +14,7 @@ const Header = () => {
     }
 
     const isAdmin = true;
+    const isInstructor = false;
 
     return (
         <div>
@@ -27,7 +28,11 @@ const Header = () => {
                             <Link to="/"><li><a>Home</a></li></Link>
                             <Link to="/allActivities"><li><a>Classes</a></li></Link>
                             <Link to="/showInstructors"><li><a>Instuctors</a></li></Link>
-                            {isAdmin ? <Link to="/dashboard/instructorhome"><li><a>Dashboard</a></li></Link> : <Link to="/dashboard/userhome"><li><a >Dashboard</a></li></Link>}
+                            {isAdmin ? 
+                            <Link to="/dashboard/manageClass"><li><a>Dashboard</a></li></Link> : 
+                            isInstructor ? 
+                            <Link to="/dashboard/instructorhome"><li><a>Dashboard</a></li></Link> :
+                            <Link to="/dashboard/userhome"><li><a >Dashboard</a></li></Link>}
 
                             
                             

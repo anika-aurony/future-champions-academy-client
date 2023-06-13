@@ -13,6 +13,8 @@ import UserHome from "../Pages/Dashboard/UserHome/UserHome";
 import InstructorHome from "../Pages/Dashboard/InstructorHome/InstructorHome";
 import AddClass from "../Pages/Dashboard/AddClass/AddClass";
 import MyClasses from "../Pages/Dashboard/AddClass/MyClasses/MyClasses";
+import ManageClasses from "../Pages/Dashboard/Admin/ManageClasses/ManageClasses";
+import MAnageUsers from "../Pages/Dashboard/Admin/ManageUsers/MAnageUsers";
 
 
 const router = createBrowserRouter([
@@ -50,6 +52,7 @@ const router = createBrowserRouter([
                 path: 'userhome',
                 element:<UserHome></UserHome>
             },
+            //instructors
             {
                 path: 'instructorhome',
                 element: <InstructorHome></InstructorHome>
@@ -61,7 +64,16 @@ const router = createBrowserRouter([
             {
                 path: 'myClasses',
                 element: <MyClasses></MyClasses>
-            }
+            },
+            //Admin
+            {
+                path: "manageClass",
+                element: <ManageClasses></ManageClasses>
+            },
+            {
+                path: "manageUsers",
+                element: <MAnageUsers></MAnageUsers>
+            },
         ]
     },
     {
