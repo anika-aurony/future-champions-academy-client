@@ -4,7 +4,7 @@
       "image": "https://images.pexels.com/photos/3800517/pexels-photo-3800517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "name": "Cricket",
       "instructor": "Amy Johnson",
-      "availableSeats": 8,
+      "availableSeats": 0,
       "price": 35,
       "totalStudents": 15
     },
