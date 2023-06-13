@@ -11,13 +11,73 @@ const MyClasses = () => {
         fetch('http://localhost:5000/activities')
             .then(res => res.json())
             .then(data => {
-               const myClass= data.filter(data => data.instructorEmail === user.email )
-                setmyClasses(myClass)
+                const myActivity = data.filter(data => data.instructorEmail === user.email)
+                setmyClasses(myActivity)
             })
     }, [])
     return (
         <div>
-            
+            <div className="overflow-x-auto">
+                <table className="table">
+                    {/* head */}
+                    <thead>
+                        <tr>
+
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Enrolled Students</th>
+                            <th>Available Seats</th>
+                            <th>Status</th>
+                            <th>Feedback</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            myClasses.map(myClass => <tr key={myClass._id}>
+                                <td>
+                                    <div className="flex items-center space-x-3">
+                                        <div className="avatar">
+                                            <div className="mask mask-squircle w-12 h-12">
+                                                <img src={myClass.image} />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="font-bold">{myClass.name}</div>
+                                            
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    ${myClass.price}
+                               
+                                  
+                                </td>
+                                <td>{myClass.totalStudents}</td>
+                                <td>{myClass.availableSeat}</td>
+                                
+                                <td>{myClass.status}</td>
+                                <td></td>
+                                <th>
+                                    <button className="btn btn-ghost btn-xs">Update</button>
+                                </th>
+
+                            </tr>)
+                        }
+                        {/* row 1 */}
+                        <tr>
+
+
+                        </tr>
+
+
+
+                    </tbody>
+
+
+                </table>
+            </div>
+
         </div>
     );
 };
