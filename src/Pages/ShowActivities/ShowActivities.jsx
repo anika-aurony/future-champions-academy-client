@@ -6,11 +6,7 @@ const ShowActivities = (props) => {
     } = props.activity;
 
 
-// let [seatZero, setSeatZero] = useState(false);
 
-//     if(availableSeats <= 0){
-//         setSeatZero = true
-//     }
 
     return (
         
