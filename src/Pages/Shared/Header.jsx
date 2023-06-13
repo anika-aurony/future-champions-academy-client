@@ -13,6 +13,8 @@ const Header = () => {
             .catch(error => console.log(error))
     }
 
+    const isAdmin = true;
+
     return (
         <div>
             <div className="navbar bg-[#0ea5e9] text-white">
@@ -25,7 +27,7 @@ const Header = () => {
                             <Link to="/"><li><a>Home</a></li></Link>
                             <Link to="/allActivities"><li><a>Classes</a></li></Link>
                             <Link to="/showInstructors"><li><a>Instuctors</a></li></Link>
-                            {user && <Link to="/myToy"><li><a>Dashboard</a></li></Link>}
+                            {isAdmin ? <Link to="/dashboard/instructorhome"><li><a>Dashboard</a></li></Link> : <Link to="/dashboard/userhome"><li><a >Dashboard</a></li></Link>}
 
                             
                             
@@ -42,7 +44,7 @@ const Header = () => {
                         <Link to="/"><li><a>Home</a></li></Link>
                         <Link to="/allActivities"><li><a>Classes</a></li></Link>
                         <Link to="/showInstructors"><li><a>Instuctors</a></li></Link>
-                        {user && <Link to="/myToy"><li><a>Dashboard</a></li></Link>}
+                        {isAdmin ? <Link to="/dashboard/instructorhome"><li><a>Dashboard</a></li></Link> : <Link to="/dashboard/userhome"><li><a >Dashboard</a></li></Link>}
 
                        
                         

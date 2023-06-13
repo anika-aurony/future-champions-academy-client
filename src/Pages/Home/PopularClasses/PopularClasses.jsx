@@ -8,7 +8,7 @@ const PopularClasses = () => {
     console.log(popularClasses)
 
     useEffect(() => {
-        fetch('classes.json')
+        fetch('http://localhost:5000/activities')
             .then(res => res.json())
             .then(data => setpopularClasses(data.slice(0, 6)))
     }, [])

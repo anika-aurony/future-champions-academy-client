@@ -6,6 +6,13 @@ import Signup from "../Pages/Login/Signup/Signup";
 import Page404 from "../Pages/Page404/Page404";
 import AllInstructors from "../Pages/AllInstructors/AllInstructors/AllInstructors";
 import AllActivities from "../Pages/AllActivities/AllActivities";
+import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../layout/Dashboard";
+import UserHome from "../Pages/Dashboard/UserHome/UserHome";
+
+import InstructorHome from "../Pages/Dashboard/InstructorHome/InstructorHome";
+import AddClass from "../Pages/Dashboard/AddClass/AddClass";
+import MyClasses from "../Pages/Dashboard/AddClass/MyClasses/MyClasses";
 
 
 const router = createBrowserRouter([
@@ -36,9 +43,32 @@ const router = createBrowserRouter([
       ]
     },
     {
+        path: "dashboard",
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        children: [
+            {
+                path: 'userhome',
+                element:<UserHome></UserHome>
+            },
+            {
+                path: 'instructorhome',
+                element: <InstructorHome></InstructorHome>
+            },
+            {
+                path: 'addClass',
+                element: <AddClass></AddClass>
+            },
+            {
+                path: 'myClasses',
+                element: <MyClasses></MyClasses>
+            }
+        ]
+    },
+    {
         path: "*",
         element: <Page404></Page404>
-      }
+    }
+    
   ]);
 
 

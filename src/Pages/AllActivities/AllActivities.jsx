@@ -6,7 +6,7 @@ const AllActivities = () => {
     console.log(activities)
 
     useEffect(() => {
-        fetch('classes.json')
+        fetch('http://localhost:5000/activities')
             .then(res => res.json())
             .then(data => setActivities(data))
     }, [])
