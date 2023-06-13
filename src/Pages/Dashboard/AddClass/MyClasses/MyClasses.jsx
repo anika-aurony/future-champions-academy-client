@@ -57,7 +57,7 @@ const MyClasses = () => {
                                 <td>{myClass.availableSeat}</td>
                                 
                                 <td>{myClass.status}</td>
-                                <td></td>
+                                <td>{myClass.feedback}</td>
                                 <th>
                                     <button className="btn btn-ghost btn-xs">Update</button>
                                 </th>
