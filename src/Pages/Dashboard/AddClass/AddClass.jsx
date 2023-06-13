@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import  { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../providers/AuthProviders';
 import Swal from 'sweetalert2';
@@ -28,7 +28,7 @@ const AddClass = () => {
                         confirmButtonText: 'Cool'
                     })
                 }
-                // form.reset();
+                reset();
 
             })
     
@@ -75,7 +75,7 @@ const AddClass = () => {
                             <span className="label-text font-semibold">Available Seats</span>
                         </label>
                         <input type="number" placeholder='Available Seats'
-                            {...register("availableSeat", { required: true, maxLength: 120 })}
+                            {...register("availableSeats", { required: true, maxLength: 120 })}
                             className="input input-bordered w-full " />
                     </div>
                     <div className="form-control w-full mb-4 ms-10">

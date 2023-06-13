@@ -5,7 +5,7 @@ import ShowClasses from '../ShowClasses/ShowClasses';
 const PopularClasses = () => {
     const [popularClasses, setpopularClasses] = useState([]);
 
-    console.log(popularClasses)
+   
 
     useEffect(() => {
         fetch('http://localhost:5000/activities')

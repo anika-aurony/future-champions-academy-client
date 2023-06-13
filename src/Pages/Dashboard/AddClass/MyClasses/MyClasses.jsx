@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import  { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../providers/AuthProviders';
 
 const MyClasses = () => {
@@ -64,14 +64,7 @@ const MyClasses = () => {
 
                             </tr>)
                         }
-                        {/* row 1 */}
-                        <tr>
-
-
-                        </tr>
-
-
-
+                      
                     </tbody>
 
 
