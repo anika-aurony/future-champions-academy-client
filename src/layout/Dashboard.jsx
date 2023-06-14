@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
 import useInstructor from '../hooks/useInstructor';
+import { Rotate, Zoom} from "react-awesome-reveal";
+import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaCartPlus, FaBook, FaUsers, FaGolfBall } from 'react-icons/fa';
 
 const Dashboard = () => {
 
@@ -25,28 +27,29 @@ const Dashboard = () => {
                         isAdmin ? <>
 
                             
-                            <li><NavLink to="/dashboard/manageClass">  Manage Classes</NavLink></li>
-                            <li><NavLink to="/dashboard/manageUsers"> Manage Users </NavLink></li>
+                            <Zoom><li><NavLink to="/dashboard/manageClass">  Manage Classes <FaGolfBall></FaGolfBall> </NavLink></li></Zoom>
+                            <Zoom><li><NavLink to="/dashboard/manageUsers"> Manage Users <FaUsers></FaUsers> </NavLink></li></Zoom>
 
 
                         </> : isInstructor ? <>
-                            <li><NavLink to="/dashboard/instructorhome"> Instructor Home</NavLink></li>
-                            <li><NavLink to="/dashboard/addClass">  Add a class</NavLink></li>
-                            <li><NavLink to="/dashboard/myclasses"> My Classes</NavLink></li>
+                            <Zoom><li><NavLink to="/dashboard/instructorhome"> Instructor Home <FaHome></FaHome></NavLink></li></Zoom>
+                            <Zoom><li><NavLink to="/dashboard/addClass">  Add a class <FaBook></FaBook></NavLink></li></Zoom>
+                            <Zoom><li><NavLink to="/dashboard/myclasses"> My Classes <FaBook></FaBook></NavLink></li></Zoom>
 
                         </> :
 
                             <>
-                                <li><NavLink to="/dashboard/userhome"> User Home</NavLink></li>
-                                <li><NavLink to="/dashboard/myBookedClass"> My Selected Classes</NavLink></li>
-                                <li><NavLink to="/dashboard/myEnrolledClass"> My Enrolled Classes</NavLink></li>
+                                <Zoom><li><NavLink to="/dashboard/userhome"> User Home <FaHome></FaHome></NavLink></li></Zoom>
+                                <Zoom><li><NavLink to="/dashboard/myBookedClass"> My Selected Classes <FaCartPlus></FaCartPlus></NavLink></li></Zoom>
+                                <Zoom><li><NavLink to="/dashboard/myEnrolledClass"> My Enrolled Classes <FaBook></FaBook></NavLink></li></Zoom>
                                 
                             </>
                     }
                     <div className="divider"></div>
-                    <li><NavLink to="/">Back to Home</NavLink> </li>
-                    <li><NavLink to="/AllActivities">All Classes</NavLink> </li>
-                    <li><NavLink to="/showInstructors">All Instructors</NavLink> </li>
+                    
+                    <Zoom><li><NavLink to="/">Back to Home <FaHome></FaHome></NavLink> </li></Zoom>
+                    <Zoom><li><NavLink to="/AllActivities">All Classes <FaBook></FaBook></NavLink> </li></Zoom>
+                    <Zoom><li><NavLink to="/showInstructors">All Instructors <FaUsers></FaUsers></NavLink> </li></Zoom>
                 </ul>
 
             </div>
