@@ -4,6 +4,7 @@ import './Login.css'
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
+import {  FaEye } from 'react-icons/fa';
 
 const Login = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -84,7 +85,9 @@ const Login = () => {
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="text" placeholder="Password" className="input input-bordered" name='password' {...register("password",  { required: true })} required/>
+                                    <input type="password" placeholder="Password" className="input input-bordered" name='password' {...register("password",  { required: true })} 
+                                    
+                                    required/> <button><p className="flex"><small className="pe-2">Show Password </small> <FaEye /></p></button>
 
                                 </div>
                                 <div className="form-control mt-4 mb-3">
