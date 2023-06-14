@@ -67,7 +67,7 @@ const MAnageUsers = () => {
 
     return (
         <div>
-            <h3 className="text-3xl font-semibold my-4">Total Users: {users?.length}</h3>
+            <h3 className="text-center text-2xl my-3">Total Users: {users?.length}</h3>
 
             <table className="table">
                 {/* head */}

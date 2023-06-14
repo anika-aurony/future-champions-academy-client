@@ -17,6 +17,7 @@ const MyClasses = () => {
     }, [])
     return (
         <div>
+            <h1 className='text-center text-2xl my-3'> Classes</h1>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}

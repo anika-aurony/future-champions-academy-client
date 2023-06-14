@@ -45,7 +45,7 @@ const ManageClasses = () => {
     
     return (
         <div>
-            <h1>Manage Classes</h1>
+            <h1 className='text-center text-2xl my-3'>Manage Classes</h1>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
