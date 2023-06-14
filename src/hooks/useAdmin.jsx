@@ -10,7 +10,7 @@ const useAdmin = () => {
 
     const [isAdmin, setisAdmin] = useState([]);
 
-    const [isAdminLoading, setisAdminLoading] = useState(true);
+    const [isAdminLoading, setisAdminLoading] = useState(loading);
     useEffect(() => {
         fetch(`http://localhost:5000/users/admin/${user?.email}`)
             .then(res => res.json())

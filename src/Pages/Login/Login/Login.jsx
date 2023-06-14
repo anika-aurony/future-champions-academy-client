@@ -9,6 +9,7 @@ import {  FaEye } from 'react-icons/fa';
 const Login = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [error, setError] = useState();
+    const [showPassword, setShowPassword] = useState(false);
 
     const { signIn, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -62,6 +63,10 @@ const Login = () => {
             console.log(error.message)
         })
     }
+
+    const toggleShowPassword = () => {
+        setShowPassword(!showPassword);
+      };
     return (
         <div>
            
@@ -85,9 +90,9 @@ const Login = () => {
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password" placeholder="Password" className="input input-bordered" name='password' {...register("password",  { required: true })} 
+                                    <input type={showPassword ? 'text' : 'password'} placeholder="Password" className="input input-bordered" name='password' {...register("password",  { required: true })} 
                                     
-                                    required/> <button><p className="flex"><small className="pe-2">Show Password </small> <FaEye /></p></button>
+                                    required/> <p className="flex my-2 justify-end" onClick={toggleShowPassword}><small className="pe-2">Show Password </small> <FaEye /></p>
 
                                 </div>
                                 <div className="form-control mt-4 mb-3">

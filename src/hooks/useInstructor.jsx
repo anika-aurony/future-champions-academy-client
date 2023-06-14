@@ -8,7 +8,7 @@ const useInstructor = () => {
 
     const [isInstructor, setisInstructor] = useState([]);
 
-    const [isInstructorLoading, setisInstructorLoading] = useState(true);
+    const [isInstructorLoading, setisInstructorLoading] = useState(loading);
     useEffect(() => {
         fetch(`http://localhost:5000/users/instructor/${user?.email}`)
             .then(res => res.json())
