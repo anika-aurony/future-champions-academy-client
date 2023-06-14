@@ -2,8 +2,8 @@ import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
 import useInstructor from '../hooks/useInstructor';
-import { Rotate, Zoom} from "react-awesome-reveal";
-import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaCartPlus, FaBook, FaUsers, FaGolfBall } from 'react-icons/fa';
+import { Zoom} from "react-awesome-reveal";
+import {  FaHome, FaCartPlus, FaBook, FaUsers, FaGolfBall } from 'react-icons/fa';
 
 const Dashboard = () => {
 
