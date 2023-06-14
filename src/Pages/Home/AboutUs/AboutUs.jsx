@@ -1,11 +1,11 @@
-
+import "./About.css"
 
 const AboutUs = () => {
     return (
         <div>
             <h1 className='text-2xl text-center p-10'>Our Achievements</h1>
-            <div className=''>
-                <div className="stats shadow w-3/4 mx-28 mb-16 bg-violet-100 ">
+            <div>
+                <div className="stats shadow w-3/4 mx-28 mb-16 bg-violet-100 makeRes">
 
                     <div className="stat">
                         <div className="stat-figure text-primary">

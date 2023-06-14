@@ -28,18 +28,18 @@ const MyBookedClass = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/carts/${myBookedClass._id}`, {
+                fetch(`https://future-champions-academy-server-side.vercel.app/carts/${myBookedClass._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
                         if (data.deletedCount > 0) {
-                            // fetch('https://future-champions-academy-server-side.vercel.app/carts')
-                            //     .then(res => res.json())
-                            //     .then(data => {
-                            //         const myBookedActivity = data.filter(data => data.userEmail === user.email)
-                            //         setmyBookedClasses(myBookedActivity)
-                            //     })
+                            fetch('https://future-champions-academy-server-side.vercel.app/carts')
+                                .then(res => res.json())
+                                .then(data => {
+                                    const myBookedActivity = data.filter(data => data.userEmail === user.email)
+                                    setmyBookedClasses(myBookedActivity)
+                                })
                             Swal.fire(
                                 'Deleted!',
                                 'Your file has been deleted.',

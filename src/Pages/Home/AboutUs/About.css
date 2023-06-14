@@ -1,0 +1,8 @@
+@media only screen and (max-width:688px) {
+    .makeRes {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+}
