@@ -2,15 +2,20 @@ import { useEffect, useState } from 'react';
 import ShowClasses from '../ShowClasses/ShowClasses';
 
 
+
 const PopularClasses = () => {
     const [popularClasses, setpopularClasses] = useState([]);
+    
 
-   
 
     useEffect(() => {
         fetch('http://localhost:5000/activities')
             .then(res => res.json())
-            .then(data => setpopularClasses(data.slice(0, 6)))
+            .then(data => {
+                const approvedClasses = data.filter(data => data.status === 'approved' && data.totalStudents > 0);
+
+                setpopularClasses(approvedClasses.slice(0, 6))
+            })
     }, [])
     return (
         <div>

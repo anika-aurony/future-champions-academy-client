@@ -38,14 +38,9 @@ const Dashboard = () => {
 
                             <>
                                 <li><NavLink to="/dashboard/userhome"> User Home</NavLink></li>
-                                <li><NavLink to="/"> Reservations</NavLink></li>
-                                <li><NavLink to="/"> Payment History</NavLink></li>
-                                <li>
-                                    <NavLink to="/dashboard/mycart"> My Cart
-
-                                    </NavLink>
-
-                                </li>
+                                <li><NavLink to="/"> My Selected Classes</NavLink></li>
+                                <li><NavLink to="/"> My Enrolled Classes</NavLink></li>
+                                
                             </>
                     }
                     <div className="divider"></div>

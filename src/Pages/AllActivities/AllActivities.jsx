@@ -5,6 +5,8 @@ const AllActivities = () => {
     const [activities, setActivities] = useState([]);
     console.log(activities)
 
+    
+
     useEffect(() => {
         fetch('http://localhost:5000/activities')
             .then(res => res.json())

@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import useAdmin from '../../hooks/useAdmin';
+import useInstructor from '../../hooks/useInstructor';
 
 const ShowActivities = (props) => {
     const { name, image, totalStudents, price, instructor, availableSeats
         
     } = props.activity;
+
+    const [isAdmin] = useAdmin();
+    const [isInstructor] =useInstructor();
 
 
 
@@ -20,7 +25,7 @@ const ShowActivities = (props) => {
                     <p><b>Instructor: </b>{instructor}</p>
                     <p><b>Available Seats: </b>{availableSeats}</p>
                     <div className="card-actions">
-                        <button className="btn bg-[#818cf8]" disabled={availableSeats < 1}>Book Now</button>
+                        <button className="btn bg-[#818cf8]" disabled={availableSeats < 1 || isAdmin || isInstructor}>Book Now</button>
                     </div>
                 </div>
                 
