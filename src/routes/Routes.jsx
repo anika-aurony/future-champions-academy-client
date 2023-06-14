@@ -18,6 +18,8 @@ import MAnageUsers from "../Pages/Dashboard/Admin/ManageUsers/MAnageUsers";
 import SendFeedback from "../Pages/Dashboard/Admin/SendFeedback/SendFeedback";
 import AdminRoutes from "./AdminRoutes";
 import InstructorRoutes from "./InstructorRoutes";
+import MyBookedClass from "../Pages/Dashboard/User/MyBookedClass/MyBookedClass";
+import MyEnrolledClass from "../Pages/Dashboard/User/MyEnrolledClass/MyEnrolledClass";
 
 
 const router = createBrowserRouter([
@@ -54,6 +56,14 @@ const router = createBrowserRouter([
             {
                 path: 'userhome',
                 element:<UserHome></UserHome>
+            },
+            {
+                path: 'myBookedClass',
+                element: <MyBookedClass></MyBookedClass>
+            },
+            {
+                path: 'myEnrolledClass',
+                element: <MyEnrolledClass></MyEnrolledClass>
             },
             //instructors
             {

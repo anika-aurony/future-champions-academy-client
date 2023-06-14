@@ -36,7 +36,7 @@ const Login = () => {
             const logUser = result.user;
             console.log(logUser);
             const saveUser = { name: result.user.displayName, email: result.user.email };
-                fetch('http://localhost:5000/users', {
+                fetch('https://future-champions-academy-server-side.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

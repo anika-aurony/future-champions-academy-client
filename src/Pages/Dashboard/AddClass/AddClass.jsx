@@ -9,7 +9,7 @@ const AddClass = () => {
     
     const onSubmit = data => {
         console.log(data);
-        fetch('http://localhost:5000/activities', {
+        fetch('https://future-champions-academy-server-side.vercel.app/activities', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -23,7 +23,7 @@ const AddClass = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Toy information Updated',
+                        text: 'Class added',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })

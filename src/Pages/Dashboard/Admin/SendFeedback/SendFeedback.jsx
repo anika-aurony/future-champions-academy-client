@@ -9,7 +9,7 @@ const SendFeedback = () => {
     const onSubmit = data => {
         console.log(data);
         const updateFeedback = { feedback: data.feedback }
-        fetch(`http://localhost:5000/activities/${params.id}`, {
+        fetch(`https://future-champions-academy-server-side.vercel.app/activities/${params.id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

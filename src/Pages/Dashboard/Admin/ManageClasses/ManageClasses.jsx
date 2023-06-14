@@ -8,7 +8,7 @@ const ManageClasses = () => {
     console.log(allClasses)
 
     useEffect(() => {
-        fetch('http://localhost:5000/activities')
+        fetch('https://future-champions-academy-server-side.vercel.app/activities')
             .then(res => res.json())
             .then(data => setAllClasses(data))
     }, [])
@@ -16,7 +16,7 @@ const ManageClasses = () => {
     const handleStatus = (id, status) => {
         console.log(id, status)
         const updateStatus = { status: status }
-        fetch(`http://localhost:5000/activities/${id}`, {
+        fetch(`https://future-champions-academy-server-side.vercel.app/activities/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -33,7 +33,7 @@ const ManageClasses = () => {
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
-                    fetch('http://localhost:5000/activities')
+                    fetch('https://future-champions-academy-server-side.vercel.app/activities')
                         .then(res => res.json())
                         .then(data => setAllClasses(data))
 

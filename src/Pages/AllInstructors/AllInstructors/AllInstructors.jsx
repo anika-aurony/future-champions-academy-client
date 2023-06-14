@@ -6,7 +6,7 @@ const AllInstructors = () => {
     console.log(instructors)
 
     useEffect(() => {
-        fetch('http://localhost:5000/instructors')
+        fetch('https://future-champions-academy-server-side.vercel.app/instructors')
             .then(res => res.json())
             .then(data => setInstructor(data))
     }, [])

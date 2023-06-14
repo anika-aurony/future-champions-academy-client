@@ -8,7 +8,7 @@ const AllActivities = () => {
     
 
     useEffect(() => {
-        fetch('http://localhost:5000/activities')
+        fetch('https://future-champions-academy-server-side.vercel.app/activities')
             .then(res => res.json())
             .then(data => setActivities(data))
     }, [])

@@ -33,7 +33,7 @@ const Signup = () => {
         })
             .then(() => {
                 const saveUser = { name: name, email: user.email };
-                fetch('http://localhost:5000/users', {
+                fetch('https://future-champions-academy-server-side.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

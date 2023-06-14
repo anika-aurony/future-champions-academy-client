@@ -38,8 +38,8 @@ const Dashboard = () => {
 
                             <>
                                 <li><NavLink to="/dashboard/userhome"> User Home</NavLink></li>
-                                <li><NavLink to="/"> My Selected Classes</NavLink></li>
-                                <li><NavLink to="/"> My Enrolled Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/myBookedClass"> My Selected Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/myEnrolledClass"> My Enrolled Classes</NavLink></li>
                                 
                             </>
                     }

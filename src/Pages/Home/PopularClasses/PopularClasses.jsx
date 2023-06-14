@@ -9,7 +9,7 @@ const PopularClasses = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/activities')
+        fetch('https://future-champions-academy-server-side.vercel.app/activities')
             .then(res => res.json())
             .then(data => {
                 const approvedClasses = data.filter(data => data.status === 'approved' && data.totalStudents > 0);

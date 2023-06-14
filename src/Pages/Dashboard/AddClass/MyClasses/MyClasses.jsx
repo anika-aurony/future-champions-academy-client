@@ -8,7 +8,7 @@ const MyClasses = () => {
     console.log(myClasses)
 
     useEffect(() => {
-        fetch('http://localhost:5000/activities')
+        fetch('https://future-champions-academy-server-side.vercel.app/activities')
             .then(res => res.json())
             .then(data => {
                 const myActivity = data.filter(data => data.instructorEmail === user.email)
