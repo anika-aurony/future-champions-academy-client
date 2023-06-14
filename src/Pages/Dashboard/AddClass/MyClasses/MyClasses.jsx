@@ -54,7 +54,7 @@ const MyClasses = () => {
                                   
                                 </td>
                                 <td>{myClass.totalStudents}</td>
-                                <td>{myClass.availableSeat}</td>
+                                <td>{myClass.availableSeats}</td>
                                 
                                 <td>{myClass.status}</td>
                                 <td>{myClass.feedback}</td>
