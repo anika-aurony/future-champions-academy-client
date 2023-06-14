@@ -8,15 +8,18 @@ import {
 } from "react-router-dom";
 import router from './routes/Routes';
 import AuthProviders from './Pages/providers/AuthProviders';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
-
+const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode >
     <AuthProviders>
-      <div className='max-w-screen-xl mx-auto'>
-        <RouterProvider router={router} />
-      </div>
+      <QueryClientProvider client={queryClient}>
+        <div className='max-w-screen-xl mx-auto'>
+          <RouterProvider router={router} />
+        </div>
+      </QueryClientProvider>
     </AuthProviders>
   </React.StrictMode>,
 )

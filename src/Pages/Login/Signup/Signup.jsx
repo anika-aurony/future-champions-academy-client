@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../providers/AuthProviders';
 import { updateProfile } from 'firebase/auth';
+import Swal from 'sweetalert2';
 
 const Signup = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -12,7 +13,7 @@ const Signup = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
 
-    const onSubmit = data =>{
+    const onSubmit = data => {
         console.log(data);
         createUser(data.email, data.password)
             .then(result => {
@@ -23,7 +24,7 @@ const Signup = () => {
             })
             .catch(error => console.log(error))
         reset();
-    } 
+    }
 
     const updateUserData = (user, name, photo) => {
         updateProfile(user, {
@@ -31,6 +32,29 @@ const Signup = () => {
             photoURL: photo
         })
             .then(() => {
+                const saveUser = { name: name, email: user.email };
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.insertedId) {
+                            reset();
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'User created successfully.',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            navigate(from, { replace: true })
+                        }
+                    })
+
                 console.log('username and photo updated')
             })
             .catch(() => {
@@ -58,15 +82,15 @@ const Signup = () => {
                                     <label className="label">
                                         <span className="label-text">Photo URL</span>
                                     </label>
-                                    <input type="text" placeholder="Photo URL" name="photo" className="input input-bordered" 
-                                    {...register("photo")} required />
+                                    <input type="text" placeholder="Photo URL" name="photo" className="input input-bordered"
+                                        {...register("photo")} required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
                                     <input type="text" placeholder="email" name="email" className="input input-bordered"
-                                    {...register("email", { required: "Email is required" })}  required />
+                                        {...register("email", { required: "Email is required" })} required />
                                 </div>
 
                                 <div className="form-control">
@@ -81,10 +105,10 @@ const Signup = () => {
                                         },
                                     })} required />
                                     {errors.password && <p>{errors.password.message}</p>}
-                                    
-                                    
+
+
                                 </div>
-                              
+
                                 <div className="form-control mt-4 mb-3">
                                     <button className="btn bg-[#297EA6]">Create</button>
                                 </div>

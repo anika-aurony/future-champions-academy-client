@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import badge from '../../assets/badge.png'
 import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProviders';
+import useAdmin from '../../hooks/useAdmin';
+import useInstructor from '../../hooks/useInstructor';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -12,9 +14,10 @@ const Header = () => {
             .then(() => { })
             .catch(error => console.log(error))
     }
-
-    const isAdmin = true;
-    const isInstructor = false;
+    const [isAdmin] = useAdmin();
+    // const isAdmin = true;
+    const [isInstructor] =useInstructor();
+    // const isInstructor = false;
 
     return (
         <div>
@@ -49,8 +52,13 @@ const Header = () => {
                         <Link to="/"><li><a>Home</a></li></Link>
                         <Link to="/allActivities"><li><a>Classes</a></li></Link>
                         <Link to="/showInstructors"><li><a>Instuctors</a></li></Link>
-                        {isAdmin ? <Link to="/dashboard/instructorhome"><li><a>Dashboard</a></li></Link> : <Link to="/dashboard/userhome"><li><a >Dashboard</a></li></Link>}
+                        {isAdmin ? 
+                            <Link to="/dashboard/manageClass"><li><a>Dashboard</a></li></Link> : 
+                            isInstructor ? 
+                            <Link to="/dashboard/instructorhome"><li><a>Dashboard</a></li></Link> :
+                            <Link to="/dashboard/userhome"><li><a >Dashboard</a></li></Link>}
 
+                       
                        
                         
 
